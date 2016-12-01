@@ -1,20 +1,20 @@
 #ifndef OUTLIER_DETECTION_H_
 #define OUTLIER_DETECTION_H_
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<cmath>
-#include<iostream>
-#include<fstream>
-#include<sstream>
-#include<vector>
-#include<map>
-#include<string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <cmath>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <map>
+#include <string>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include<sys/time.h>
+#include <sys/time.h>
 #include <dirent.h>
-#include<unistd.h>
+#include <unistd.h>
 #include"methods.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ public:
 	DataNode(int id);
 	DataNode(int id, vector<int> attr);
 	DataNode(const DataNode &src);
-	
+
 	int getID()const;
 	vector<int> getAttributes()const;
 	void addAttributes(vector<int>::iterator being,vector<int>::iterator end);
@@ -42,7 +42,7 @@ private:
 	int cellNodeCount;						//块内数据点数目
 	int layer1CellNodeCount;				//层1块的数据点数目
 	int layer2CellNodeCount;				//层2块的数据数目
-	
+
 	vector<DataNode> nodeList;				//块内数据点列表，为节省内存，只在需要计算数据点距离的时候从文件加载
 	vector<int> nodeIdList;					//块内数据点ID列表
 	vector<int> layer1CellIDList;			//层1块ID列表
@@ -61,7 +61,7 @@ public:
 	vector<int> getNodeIdList()const;		//获取层内数据点ID列表
 	vector<int> getLayer1CellIDList()const;	//获取层1块ID列表
 	vector<int> getLayer2CellIDList()const;	//获取层2块ID列表
-	
+
 	void setFlag(int f);
 	void addDataNodeId(int id);				//增加一个数据点到块
 	void removeDataNode(int id);			//移除块内的数据点
@@ -93,13 +93,13 @@ private:
 	int min;								//坐标下界
 	double percentage;						//异常点百分数阀值
 	double radius;							//半径
-	
+
 public:
 	OutlierDetection(string infile, int num, double percent, int dimen, double r, int maxm, int mini);
 
 	void addCell(DataCell &src);			//增加数据块
 	void addNodeToCell(int cellID, DataNode);//增加数据点到块
-	
+
 	void randomGenerate();					//随机生成数据,坐标为整型
 	void generateCell();					//生成数据块
 	void layerNodeCount();					//计算每个块层1和层2数据点数目

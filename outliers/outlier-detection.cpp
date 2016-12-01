@@ -198,7 +198,6 @@ void DataCell::loadDataNodeFromFile(int dimension)
 			string tmp;
 			size_t bpos = 0;
 			size_t epos = 0;
-			string::size_type idex;
 			vector<int> vint;
 			while(bpos != string::npos)
 			{
@@ -476,7 +475,7 @@ void OutlierDetection::randomGenerate()
 		string line;
 		char ctmp[30];
 		sprintf(ctmp,"%d ",i);			//数据点ID
-		line.append(ctmp);	
+		line.append(ctmp);
 		for(int j = 1; j <= dimension; j++)	//数据点坐标
 		{
 			int itmp;

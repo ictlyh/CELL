@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
 	string inFile;
 	int numOfDatas, numOfDim;
-	double fracTotal, neighborRadius, totalTime;
+	double fracTotal, neighborRadius;
 	char ch;
 	while ((ch = getopt(argc, argv, "r:n:a:c:d:")) != -1)
 	{
