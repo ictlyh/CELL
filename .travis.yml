@@ -1,9 +1,11 @@
 language: cpp
 compiler: clang
 script:
-  - make -C ./outliers
+  - pushd ./outliers
+  - make
   - gcov demo.cpp
   - gcov methods.cpp
   - gcov outlier-detection.cpp
+  - popd
 after_success:
   - bash <(curl -s https://codecov.io/bash)
