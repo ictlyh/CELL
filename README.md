@@ -1,5 +1,7 @@
 #  Outlier Detection Algorithm: CELL
 [![Build Status](https://travis-ci.org/ictlyh/CELL.svg?branch=master)](https://travis-ci.org/ictlyh/CELL)
+[![codecov](https://codecov.io/gh/ictlyh/CELL/branch/master/graph/badge.svg)](https://codecov.io/gh/ictlyh/CELL)
+
 
 Introduction and implement of an Outlier Detection Algorithm:CELL  
 Learn more about it, please read file report.pdf  
