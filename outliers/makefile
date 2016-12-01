@@ -20,4 +20,4 @@ demo.o: demo.cpp
 	${CPP} ${CC_FLAGS} -c -o $@ $< $(INC_DIRS) $(LIB_DIRS) $(LIBS)
 
 clean:
-	rm -rf Outlier *.o *.gcno *.gcov
+	rm -rf Outlier *.o *.gcno *.gcov *.gcda

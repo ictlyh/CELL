@@ -81,6 +81,7 @@ int main(int argc, char **argv)
 	gettimeofday(&t_end, NULL);
 	cost_time = (t_end.tv_sec - t_start.tv_sec) * 1000000  + t_end.tv_usec - t_start.tv_usec;
 	resultOutput("out.txt",outliers.getOutliers(),cost_time);
+	system(("rm -r " + inFile).c_str());
 	system("rm -r tmp");
 	return 0;
 }

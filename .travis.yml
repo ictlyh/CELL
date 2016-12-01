@@ -3,6 +3,7 @@ compiler: clang
 script:
   - pushd ./outliers
   - make
+  - ./Outlier -r inFile.txt -n 100000 -a 2 -c 0.015 -d 1
   - gcov demo.cpp
   - gcov methods.cpp
   - gcov outlier-detection.cpp

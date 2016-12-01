@@ -1,4 +1,5 @@
 *.o
 *.gcov
 *.gcno
+*.gcda
 Outlier
